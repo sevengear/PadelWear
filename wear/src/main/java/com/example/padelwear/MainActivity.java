@@ -6,8 +6,6 @@ import android.support.wear.widget.WearableLinearLayoutManager;
 import android.support.wear.widget.WearableRecyclerView;
 import android.support.wearable.activity.WearableActivity;
 import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainActivity extends WearableActivity {
     // Elementos a mostrar en la lista
@@ -18,7 +16,7 @@ public class MainActivity extends WearableActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         WearableRecyclerView lista = findViewById(R.id.lista);
-        lista.setLayoutManager(new WearableLinearLayoutManager(this));
+        //lista.setLayoutManager(new WearableLinearLayoutManager(this));
         lista.setEdgeItemsCenteringEnabled(true);
         lista.setLayoutManager(new WearableLinearLayoutManager(this, new CustomLayoutCallback()));
         Adaptador adaptador = new Adaptador(this, elementos);
@@ -48,6 +46,8 @@ public class MainActivity extends WearableActivity {
                     case 7:
                         startActivity(new Intent(MainActivity.this, SwipeDismiss.class));
                         break;
+                    case 8:
+                        finish();
                 }
             }
         });

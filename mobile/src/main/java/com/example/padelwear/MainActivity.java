@@ -186,7 +186,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if (id == R.id.accion_contador) {
-            startActivity(new Intent(this, Contador.class));
+            startActivity(new Intent(this, MContador.class));
             return true;
         }
 

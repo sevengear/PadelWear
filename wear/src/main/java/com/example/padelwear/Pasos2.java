@@ -22,7 +22,7 @@ public class Pasos2 extends Activity implements SensorEventListener {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pasos);
-        count = (TextView) findViewById(R.id.contador);
+        count = findViewById(R.id.contador);
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
     }
 

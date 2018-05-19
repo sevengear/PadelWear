@@ -1,6 +1,5 @@
 package com.example.padelwear;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -21,6 +20,7 @@ import java.util.Date;
 /**
  * Created by Miguel Á. Núñez on 14/05/2018.
  */
+
 public class Contador extends WearableActivity {
     private Typeface fuenteNormal = Typeface.create("sans-serif", Typeface.NORMAL);
     private Typeface fuenteFina = Typeface.create("sans-serif-thin", Typeface.NORMAL);
@@ -30,14 +30,12 @@ public class Contador extends WearableActivity {
     private long[] vibrEntrada = {0l, 500};
     private long[] vibrDeshacer = {0l, 500, 500, 500};
     private DismissOverlayView dismissOverlay;
-    private GestureDetector detector;
 
-    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setAmbientEnabled();
         setContentView(R.layout.contador);
+        setAmbientEnabled();
         partida = new Partida();
         vibrador = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
         misPuntos = findViewById(R.id.misPuntos);
@@ -179,7 +177,6 @@ public class Contador extends WearableActivity {
     @Override
     public void onUpdateAmbient() {
         super.onUpdateAmbient();
-        // Actualizar contenido
         Calendar c = Calendar.getInstance();
         c.setTime(new Date());
         hora.setText(c.get(Calendar.HOUR_OF_DAY) + ":" + c.get(Calendar.MINUTE));
